@@ -2,39 +2,48 @@
     text-align: center;
     margin: 0px;
 }
+
 .cabeçalho {
     background-color: #00704a;
     color: #ffffff;
-    height: 20px;
+    height: 30px;
+    vertical-align: middle;
 }
 .navegação {
-    background-color: #ffffff
+    background-color: beige;
+    height: 60px;
+    padding: 60px 0px 0px 0px;
 }
 .navegação a {
-    display: inline-block;
-    background-color: #ffffff;
-    color: #000000;
+    color: black;
     text-decoration: none;
-    padding: 40px 14px 14px 14px;
+    padding: 15px;
 }
 .navegação a:hover {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 14px 14px 14px 14px;
+    background-color: #00704a;
+    color: beige;
+}
+.meio {
+    margin: auto;
 }
 .corpo {
-    padding: 20vh;
+    height: 1200px;
+    background-color: #ffffff;
+    padding-top: 5%;
 }
-.corpo h1 {
-    padding: 20px;
+.corpo p {
+    padding: 15px;
+}
+.corpo li {
+    padding: 7px;
 }
 .imagemproduto {
-    height: 300px;
-    width: 300px;
+    height: 220px;
+    width: 220px;
 }
 .rodapé {
     background-color: #e6e6e6;
-    padding: 10vh 14px 5vh 14px;
+    height: 180px;
 }
 .ícone {
     height: 30px;
