@@ -1,0 +1,42 @@
+* {
+    text-align: center;
+    margin: 0px;
+}
+.cabeçalho {
+    background-color: #00704a;
+    color: #ffffff;
+    height: 20px;
+}
+.navegação {
+    background-color: #ffffff
+}
+.navegação a {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    padding: 40px 14px 14px 14px;
+}
+.navegação a:hover {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 14px 14px 14px 14px;
+}
+.corpo {
+    padding: 20vh;
+}
+.corpo h1 {
+    padding: 20px;
+}
+.imagemproduto {
+    height: 300px;
+    width: 300px;
+}
+.rodapé {
+    background-color: #e6e6e6;
+    padding: 10vh 14px 5vh 14px;
+}
+.ícone {
+    height: 30px;
+    width: 30px;
+}
