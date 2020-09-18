@@ -1,0 +1,51 @@
+* {
+    text-align: center;
+    margin: 0px;
+}
+
+.cabeçalho {
+    background-color: #00704a;
+    color: #ffffff;
+    height: 30px;
+    vertical-align: middle;
+}
+.navegação {
+    background-color: beige;
+    height: 60px;
+    padding: 60px 0px 0px 0px;
+}
+.navegação a {
+    color: black;
+    text-decoration: none;
+    padding: 15px;
+}
+.navegação a:hover {
+    background-color: #00704a;
+    color: beige;
+}
+.meio {
+    margin: auto;
+}
+.corpo {
+    height: 1200px;
+    background-color: #ffffff;
+    padding-top: 5%;
+}
+.corpo p {
+    padding: 15px;
+}
+.corpo li {
+    padding: 7px;
+}
+.imagemproduto {
+    height: 220px;
+    width: 220px;
+}
+.rodapé {
+    background-color: #e6e6e6;
+    height: 180px;
+}
+.ícone {
+    height: 30px;
+    width: 30px;
+}
