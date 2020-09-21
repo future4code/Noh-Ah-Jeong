@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    list-style-position: inside;
 }
 
 h2 {
@@ -72,7 +73,7 @@ div>p:first-child {
 }
 
 #container-de-descricao>ol {
-    padding: 15px 0px;
+    padding: 15px 0;
 }
 
 #container-para-comprar {
