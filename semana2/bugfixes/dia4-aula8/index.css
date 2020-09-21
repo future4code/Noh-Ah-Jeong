@@ -122,6 +122,13 @@ td img {
     height: 50px;
 }
 
+.icone:hover {
+    opacity: 0.2;
+}
+.icone:active {
+    opacity: 1;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
