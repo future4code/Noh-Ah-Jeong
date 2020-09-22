@@ -7,15 +7,15 @@ body {
     color: white;
 }
 
-#top-container {
+#main-container {
     display: grid;
+    height: 100vh;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 7vh;
+    grid-template-rows: 1fr 9fr 2fr 2fr 1fr;
 }
 
 .green-background {
     background-color: green;
-    grid-column: 1 / 2;
 }
 
 .yellow-background {
@@ -25,20 +25,30 @@ body {
 
 .pink-background {
     background-color: fuchsia;
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
 }
 
 .blue-background {
     background-color: blue;
+    grid-column: 1 / 3;
+    grid-row: 3 / 5;
 }
 
 .red-background {
     background-color: red;
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
 }
 
 .lightgreen-background {
     background-color: lightgreen;
+    grid-column: 4 / 5;
+    grid-row: 4 / 5;
 }
 
 .purple-background {
     background-color: purple;
+    grid-column: 1 / 5;
+    grid-row: 5 / 6;
 }
