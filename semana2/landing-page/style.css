@@ -82,6 +82,11 @@ footer {
 }
 
 @media screen and (max-width: 375px) {
+    /* Geral */
+    body {
+        font-size: 0.8em;
+    }
+    
     /* Cabeçalho */
     .logo {
         width: 375px;
