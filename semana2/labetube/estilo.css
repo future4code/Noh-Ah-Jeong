@@ -1,0 +1,39 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: #b7d7e8;
+}
+
+header {
+    background-color:#cfe0e8;
+    width: 100vw;
+    padding: 40px 50px;
+}
+
+article {
+    margin: 50px;
+    border: 1px solid #87bdd8;
+    float: left;
+    width: 230px;
+    height: 230px;
+    padding: 10px;
+    text-align: center;
+}
+
+section {
+    padding-top: 10px;
+}
+
+section a {
+    text-decoration: none;
+    color: blue;
+}
+
+footer {
+    background-color: #daebe8;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 50px;
+}
