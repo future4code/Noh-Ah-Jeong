@@ -76,3 +76,54 @@ for (let valor of array) {
 }
 console.log("O maior número é " + valorMaximo + " e o menor é " + valorMinimo)
 */
+
+// DESAFIO 2
+/*
+let numeroEscolhido = Number(prompt("Jogador 1: Pense e digite um número"))
+console.log("Vamos jogar!")
+
+let chute = Number(prompt("Jogador 2: Tente acertar o número escolhido pelo Jogador 1"))
+console.log("O número chutado foi: " + chute)
+
+let tentativas = 1
+
+while (chute !== numeroEscolhido) {
+    if (chute > numeroEscolhido) {
+        console.log("Errou. O número escolhido é menor")
+    } else if (chute < numeroEscolhido) {
+        console.log("Errou. O número escolhido é maior")
+    }
+    tentativas++
+    chute = Number(prompt("Jogador 2: Tente acertar mais uma vez o número escolhido pelo Jogador 1"))
+    console.log("O número chutado foi: " + chute)
+}
+
+console.log("Acertou!!")
+console.log("O número de tentativas foi: " + tentativas)
+*/
+
+// DESAFIO 3
+/*
+let numeroEscolhido = Math.floor(Math.random()*100)
+console.log("Vamos jogar!")
+
+let chute = Number(prompt("Tente acertar o número escolhido aleatoriamente"))
+console.log("O número chutado foi: " + chute)
+
+let tentativas = 1
+
+while (chute !== numeroEscolhido) {
+    if (chute > numeroEscolhido) {
+        console.log("Errou. O número escolhido é menor")
+    } else if (chute < numeroEscolhido) {
+        console.log("Errou. O número escolhido é maior")
+    }
+    tentativas++
+    chute = Number(prompt("Tente acertar mais uma vez o número"))
+    console.log("O número chutado foi: " + chute)
+}
+
+console.log("Acertou!!")
+console.log("O número de tentativas foi: " + tentativas)
+// Foi fácil fazer a alteração com a referência dada no desafio.
+*/
