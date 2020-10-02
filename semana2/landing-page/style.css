@@ -1,0 +1,118 @@
+/* Geral */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: #332929;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Cabeçalho */
+header {
+    width: 100%;
+    background: #c23949;
+    color: white;
+    font-size: 3em;
+    padding: 0;
+}
+
+/* Itens do Cabeçalho */
+ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 100px;
+}
+
+/* Corpo */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 100px;
+}
+
+.espaco {
+    display: flex;
+    justify-content: space-around;
+    padding: 100px;
+}
+
+/* Seção Serviços */
+.box {
+    padding: 0px 50px;
+}
+
+.box>a {
+    text-decoration: none;
+    color: #332929;
+}
+
+.imagem {
+    width: 400px;
+    height: 400px;
+}
+
+/* Seção Trabalhe Conosco */
+button {
+    background-color: #D97789;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Rodapé */
+footer {
+    background: #D97789;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+    padding: 100px;
+}
+
+.icone {
+    width: 50px;
+}
+
+@media screen and (max-width: 375px) {
+    /* Geral */
+    body {
+        font-size: 0.8em;
+    }
+    
+    /* Cabeçalho */
+    .logo {
+        width: 375px;
+        height: 375px;
+    }
+
+    header>ul {
+        flex-direction: column;
+        margin-right: 0;
+    }
+    
+    /* Corpo */
+    .espaco {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 60px 0;
+    }
+
+    /* Seção Serviços */
+    .box {
+        padding: 0;
+    }
+
+    .imagem {
+        width: 200px;
+        height: 200px;
+    }
+}
