@@ -22,3 +22,13 @@
     8
 */
 
+/* 4.
+    O código percorre cada elemento do array 'numeros' através do loop for of e verifica se são menores que 'numero1' ou maiores que 'numero2'.
+    Se o elemento 'numero' for menor que 'numero1', a variável 'numero1' passa a assumir o valor do elemento.
+    Se o elemento 'numero' foi maior que 'numero2', a variável 'numero2' passa a assumir o valor do elemento.
+    Inicialmente 'numero1' vale Infinity e 'numero2' vale 0.
+    No final, a variável 'numero1' terá o valor do menor elemento e a variável 'numero2' do maior elemento
+    Será impresso no console:
+    -10
+    283
+*/
