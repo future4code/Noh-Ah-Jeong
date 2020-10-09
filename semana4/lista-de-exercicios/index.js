@@ -46,3 +46,11 @@
     - callback forEach
     pokemons.forEach((pkmn) => { })
 */
+
+/* 2.
+    a) false
+    b) false
+    c) true
+    d) true
+    e) true
+*/
