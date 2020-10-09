@@ -54,3 +54,14 @@
     d) true
     e) true
 */
+
+/* 3.
+// O código não funciona porque não há uma atribuição do número N para a variável quantidadeDeNumerosPares, a condicional pega uma quantidade maior de numeros pares e não há um incremento para a variável 'i'.
+const quantidadeDeNumerosPares = prompt("Digite um número")
+let i = 0
+while(i < quantidadeDeNumerosPares) {
+  console.log(i*2)
+  i++
+}
+*/
+
