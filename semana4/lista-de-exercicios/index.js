@@ -32,3 +32,17 @@
     -10
     283
 */
+
+// Exercícios de Lógica de Programação
+/* 1.
+    Para percorrer uma lista, const pokemons = ["Bulbasaur", "Squirtle", "Charmander"], podemos usar:
+
+    - loop for
+    for (let i = 0; i < pokemons.length; i++) { }
+
+    - loop for of
+    for (let pkmn of pokemons) { }
+
+    - callback forEach
+    pokemons.forEach((pkmn) => { })
+*/
