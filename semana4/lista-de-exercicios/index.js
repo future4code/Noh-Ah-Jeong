@@ -14,3 +14,11 @@
     165
 */
 
+/* 3.
+    O código trabalha com 3 arrays 'numeros' 'array1' e 'array2'. Através de um loop for com condicionais if/else os elementos pares do array 'numeros' são adicionados ao 'array1' através do push e os elementos ímpares no 'array2'.
+    No console será impresso:
+    Quantidade total de números 14
+    6
+    8
+*/
+
