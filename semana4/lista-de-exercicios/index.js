@@ -6,3 +6,12 @@
     R$(input do usuário multiplicado por 100)
 */
 
+/* 2.
+    Através de uma função, é calculada o montante de um valor de acordo com o tipo de investimento.
+    A função 'investeDinheiro' recebe como input as variáveis 'tipoDeInvestimento' e 'valor', e contém uma condicional do tipo switch que seleciona o cálculo a ser feito de acordo com o input 'tipoDeInvestimento' declarado na invocação da função. A função retorna a variável 'valorAposInvestimento' que é o cálculo feito na condicional, multiplicando o input 'valor' pelo respectivo rendimento.
+    No código, a função é invocada na variável 'novoMontante' com o input "Ações" e '150', e também na variável 'segundoMontante' com os inputs "Tesouro Direto" e '200'.
+    Será impresso no console:
+    165
+    TIPO DE INVESTIMENTO INFORMADO INCORRETO!
+*/
+
