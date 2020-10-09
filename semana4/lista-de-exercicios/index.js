@@ -77,3 +77,42 @@ while(i < quantidadeDeNumerosPares) {
     }
 */
 
+/* 5.
+    let maior
+    let aDivisivel
+    let bDivisivel
+    let diferença
+    let verificaTudo = (a, b) => {
+        if (a > b) {
+            maior = a
+        } else if (a < b) {
+            maior = b
+        } else {
+            maior = "Não tem"
+        }
+        console.log(maior)
+
+        if (a % b === 0) {
+            aDivisivel = a + " é divisível por " + b
+        } else {
+            aDivisivel = a + " não é divisível por " + b
+        }
+        console.log(aDivisivel)
+
+        if (b % a === 0) {
+            bDivisivel = b + " é divisível por " + a
+        } else {
+            bDivisivel = b + " não é divisível por " + a
+        }
+        console.log(bDivisivel)
+
+        if ((a - b) >= 0) {
+            diferença = a - b
+        } else {
+            diferença = (a - b) * (-1)
+        }
+        console.log(diferença)
+    }
+    verificaTudo (5, 55)
+*/
+
