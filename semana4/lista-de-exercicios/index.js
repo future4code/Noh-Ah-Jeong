@@ -65,3 +65,15 @@ while(i < quantidadeDeNumerosPares) {
 }
 */
 
+/* 4.
+    let verificaTriangulo = (a, b, c) => {
+        if ((a === b) && (b === c) && (a === c)) {
+            return "Equilátero"
+        } else if ((a !== b) && (b !== c) && (a !== c)) {
+            return "Escaleno"
+        } else {
+            return "Isósceles"
+        }
+    }
+*/
+
