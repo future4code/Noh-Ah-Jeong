@@ -171,3 +171,10 @@ while(i < quantidadeDeNumerosPares) {
     pegarSegundoMaiorMenor(arrayOriginal)
 */
 
+/* 2.
+    let criaAlert = () => {
+    alert("Hello Future4")
+    }
+    criaAlert()
+*/
+
