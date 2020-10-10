@@ -237,3 +237,51 @@ while(i < quantidadeDeNumerosPares) {
     })
 */
 
+/* 2. a
+const array = [1, 2, 3, 4, 5, 6]
+
+let duplicaElemento = (lista) => {
+    let arrayDuplicado = []
+
+    lista.forEach((elemento) => {
+        arrayDuplicado.push(elemento * 2)
+    })
+
+    return arrayDuplicado
+}
+console.log(duplicaElemento(array))
+*/
+
+/* 2. b
+const array = [1, 2, 3, 4, 5, 6]
+
+let triplicaElementoTexto = (lista) => {
+    let arrayTriplicado = []
+
+    lista.forEach((elemento) => {
+        arrayTriplicado.push(String(elemento * 3))
+    })
+
+    return arrayTriplicado
+}
+console.log(triplicaElementoTexto(array))
+*/
+
+/* 2. c
+const array = [1, 2, 3, 4, 5, 6]
+
+let verificaParOuImpar = (lista) => {
+    let arrayVerificado = []
+
+    lista.forEach((elemento) => {
+        if (elemento % 2 === 0) {
+            arrayVerificado.push(elemento + " é par")
+        } else {
+            arrayVerificado.push(elemento + " é ímpar")
+        }  
+    })
+
+    return arrayVerificado
+}
+console.log(verificaParOuImpar(array))
+*/
