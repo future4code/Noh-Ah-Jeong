@@ -116,3 +116,58 @@ while(i < quantidadeDeNumerosPares) {
     verificaTudo (5, 55)
 */
 
+// Exercícios de Funções
+/* 1.
+    let arrayOriginal = [45, 645, 23, 326, 49]
+
+    let pegarSegundoMaiorMenor = (lista) => {
+        let arrayCopia = lista
+
+        let primeiroMaior = lista[0]
+    
+        for (let elemento of lista) {
+            if (elemento > primeiroMaior) {
+                primeiroMaior = elemento
+            }
+        }
+    
+        let i = lista.indexOf(primeiroMaior)
+        let maiorNumero = arrayCopia.splice(i, 1)
+
+        let segundoMaior = arrayCopia[0]
+    
+        for (let elemento of arrayCopia) {
+            if (elemento > segundoMaior) {
+                segundoMaior = elemento
+            }
+        }
+
+        console.log(segundoMaior)
+
+        arrayCopia = lista
+
+        let primeiroMenor = lista[0]
+    
+        for (let elemento of lista) {
+            if (elemento < primeiroMenor) {
+                primeiroMenor = elemento
+            }
+        }
+    
+        i = lista.indexOf(primeiroMenor)
+        arrayCopia.splice(i, 1)
+        
+        let segundoMenor = lista[0]
+    
+        for (let elemento of lista) {
+            if (elemento < segundoMenor) {
+                segundoMenor = elemento
+            }
+        }
+
+        console.log(segundoMenor)
+    }
+
+    pegarSegundoMaiorMenor(arrayOriginal)
+*/
+
