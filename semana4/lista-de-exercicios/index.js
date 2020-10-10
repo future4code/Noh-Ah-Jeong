@@ -178,3 +178,18 @@ while(i < quantidadeDeNumerosPares) {
     criaAlert()
 */
 
+// Exercícios de Objetos
+/* 1.
+    Arrays são um conjunto de elementos ordenados nos quais os elementos podem assumir o valor de uma variável.
+    Objetos são semelhantes aos arrays mas seus elementos são objetos que por sua vez podem receber parâmetros. Cada parâmetro é constituído de uma chave e o seu valor.
+    Arrays são recomendados quando queremos uma lista de variáveis simples. Objetos são recomendados para criar uma lista de variáveis mais complexas.
+*/
+
+/* 2.
+    let criaRetangulo = (lado1, lado2) => {
+        return retangulo = {
+            largura: lado1, altura: lado2, perimetro: (2 * (lado1 + lado2)), area: (lado1 * lado2)
+        }
+    }
+*/
+
