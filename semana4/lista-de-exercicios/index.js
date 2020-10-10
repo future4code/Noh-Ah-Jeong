@@ -200,3 +200,20 @@ while(i < quantidadeDeNumerosPares) {
 
     console.log("Venha assistir ao filme " + filmeFavorito.titulo + ", de " + filmeFavorito.ano + ", dirigido por " + filmeFavorito.diretor + " e estrelado por " + filmeFavorito.atoresAtrizes)
 */
+
+/* 4.
+    const umaPessoa = {
+        nome: "Noh Ah Jeong", idade: 27, email: "noh_ah@hotmail.com", endereco: "São Paulo"
+    }
+    
+    let anonimizarPessoa = () => {
+        const nomeAnonimo = {
+            ...umaPessoa,
+            nome: "ANÔNIMO"
+        }
+        return nomeAnonimo
+    }
+        
+    console.log(umaPessoa)
+    console.log(anonimizarPessoa())
+*/
