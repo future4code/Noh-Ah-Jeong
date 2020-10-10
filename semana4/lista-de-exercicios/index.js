@@ -285,3 +285,70 @@ let verificaParOuImpar = (lista) => {
 }
 console.log(verificaParOuImpar(array))
 */
+
+/* 3.
+const pessoas = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
+
+const pessoasPermitidas = pessoas.filter((pessoa) => {
+    if (pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade < 60) {
+        return true
+    }
+    return false
+    })
+
+console.log(pessoasPermitidas)
+*/
+
+/* 3.
+const pessoas = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
+
+const pessoasNaoPermitidas = pessoas.filter((pessoa) => {
+    if (pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade < 60) {
+        return false
+    }
+    return true
+    })
+
+console.log(pessoasNaoPermitidas)
+*/
+
+/* 4.
+const consultas = [
+	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+
+let arrayDeEmails = []
+consultas.forEach((pessoa) => {
+    if (pessoa.genero === "masculino") {
+        arrayDeEmails.push(`Olá, Sr. ${ pessoa.nome }. Estamos enviando esta mensagem para lembrá-lo da sua consulta no dia ${ pessoa.dataDaConsulta }. Por favor, acuse o recebimento deste e-mail.`)
+    } else {
+        arrayDeEmails.push(`Olá, Sra. ${ pessoa.nome }. Estamos enviando esta mensagem para lembrá-la da sua consulta no dia ${ pessoa.dataDaConsulta }. Por favor, acuse o recebimento deste e-mail.`)
+    }  
+})
+
+let arrayDeEmailsCancelados = []
+consultas.forEach((pessoa) => {
+    if (pessoa.genero === "masculino") {
+        arrayDeEmailsCancelados.push(`Olá, Sr. ${ pessoa.nome }. Infelizmente, sua consulta marcada para o dia ${ pessoa.dataDaConsulta } foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la.`)
+    } else {
+        arrayDeEmailsCancelados.push(`Olá, Sra. ${ pessoa.nome }. Infelizmente, sua consulta marcada para o dia ${ pessoa.dataDaConsulta } foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la.`)
+    }  
+})
+*/
