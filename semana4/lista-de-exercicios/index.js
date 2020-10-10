@@ -193,3 +193,10 @@ while(i < quantidadeDeNumerosPares) {
     }
 */
 
+/* 3.
+    const filmeFavorito = {
+        titulo: "The Lord of the Rings: The Fellowship of the Ring", ano: 2001, diretor: "Peter Jackson", atoresAtrizes: ["Elijah Wood", "Ian McKellen", "Andy Serkis", "Sean Astin"]
+    }
+
+    console.log("Venha assistir ao filme " + filmeFavorito.titulo + ", de " + filmeFavorito.ano + ", dirigido por " + filmeFavorito.diretor + " e estrelado por " + filmeFavorito.atoresAtrizes)
+*/
