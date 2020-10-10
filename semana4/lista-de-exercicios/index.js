@@ -217,3 +217,23 @@ while(i < quantidadeDeNumerosPares) {
     console.log(umaPessoa)
     console.log(anonimizarPessoa())
 */
+
+// Exercícios de Funções de array
+/* 1. a
+    const somenteAdultos = array.filter((pessoas) => {
+        if (pessoas.idade >= 20) {
+        return true
+        }
+        return false
+    })
+*/
+
+/* 1. b
+    const somenteJovens = array.filter((pessoas) => {
+        if (pessoas.idade < 20) {
+        return true
+        }
+        return false
+    })
+*/
+
