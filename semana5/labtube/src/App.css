@@ -4,7 +4,6 @@ body {
   margin: 0;
 }
 
-
 .tela-inteira {
   height: 100vh;
   display: flex;
@@ -12,12 +11,31 @@ body {
 }
 
 header {
-  background-color: orange;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
   height: 10%;
+}
+
+.icone {
+  width: 40px;
+  height: auto;
+}
+
+.campo-de-busca {
+  height: 30px;
+  width: 50vw;
+}
+
+.botao-do-login {
+  color: #065fd4;
+  border-color: #065fd4;
+  border-radius: 1px;
+  border-width: thin;
+  background-color: white;
+  padding: 12px;
+  font-weight: bold;
 }
 
 main {
@@ -27,21 +45,28 @@ main {
 
 .menu-vertical {
   flex-basis: 200px;
-  border-right-style: solid;
-  border-right-width: thin;
 }
 
 .botoes-meunu-vertical {
   list-style-type: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+hr {
+  border-color: #e5e5e5;
+  border-style: solid;
 }
 
 .painel-de-videos {
-  padding-left: 20px;
+  padding-left: 80px;
+  padding-right: 80px;
   padding-top: 20px;
   flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(4, 24.8% 0.2%);
   grid-template-rows: repeat(4, 270px 20px);
+  background-color: #f9f9f9;
 }
 
 .media1 {
@@ -89,16 +114,15 @@ main {
   display: grid;
   grid-template-rows: 3fr 1fr;
   grid-template-columns: 1fr;
-  border-style: solid;
-  border-width: thin; 
   align-items: start;
   justify-items: stretch;
+  padding: 2px 8px;
 }
 
 
 footer {
   height: 10%;
-  background-color: grey;
+  background-color: #e5e5e5;
   margin: 0;
   padding: 0;
   display: flex;
