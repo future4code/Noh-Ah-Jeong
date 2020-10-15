@@ -53,11 +53,11 @@ class Post extends React.Component {
     })
   }
 
-  aoCompartilhar = () => {
+  aoCompartilhar = (event) => {
     this.setState({
       compartilhando: false,
-      // console.log("Post compartilhado no ")
     })
+    console.log("Post compartilhado no " + event.target.id + " com a mensagem: " + this.state.comentarioDoCompartilhar)
   }
 
   onClickComentario = () => {
