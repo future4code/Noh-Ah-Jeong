@@ -7,4 +7,5 @@ export const HeaderContainer = styled.div`
     width: 90%;
     height: 50px;
     border-bottom: 2px solid gainsboro;
+    margin-bottom: 16px;
 `
