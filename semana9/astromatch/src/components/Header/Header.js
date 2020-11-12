@@ -1,12 +1,14 @@
 import React from 'react';
-import { HeaderContainer } from './styled';
+import { HeaderContainer, Img } from './styled';
+import Previous from '../../assets/previous-48dp.svg'
+import Next from '../../assets/next-48dp.svg'
 
 function Header(props) {
     return(
         <HeaderContainer>
-            <button onClick={props.goToProfiles}>-</button>
-            <p>AstroMatch</p>
-            <button onClick={props.goToMatches}>+</button>
+            <Img src={Previous} onClick={props.goToProfiles}/>
+            <h2>AstroMatch</h2>
+            <Img src={Next} onClick={props.goToMatches}/>
         </HeaderContainer>
     )
 }

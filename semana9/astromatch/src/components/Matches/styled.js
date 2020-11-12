@@ -10,3 +10,21 @@ export const Container = styled.div`
     border: 2px solid black;
     border-radius: 16px;
 `
+
+export const MatchContainer = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    :hover{
+        background-color: gainsboro;
+    }
+        img {
+            object-fit: cover;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            padding: 2px;
+            margin: 4px 16px 4px 4px;
+        }
+`

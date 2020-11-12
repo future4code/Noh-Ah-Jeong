@@ -14,22 +14,11 @@ export const Container = styled.div`
 export const ProfileContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 360px;
-    height: 428px;
-    position: relative;
-`
-
-export const ProfileImage = styled.img`
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: scale-down;
-    border-radius: 8px;
-`
-
-export const ProfileDetailContainer = styled.div`
-    position: absolute;
-    bottom: 0px;
+    justify-content: flex-end;
+    width: 87%;
+    height: 80%;
+    background: url(${(props) => props.imageUrl}) center center/cover;
+    border-radius: 16px;
     padding: 8px;
     color: white;
     text-shadow: 1px 1px black;
@@ -41,4 +30,11 @@ export const ButtonContainer = styled.div`
     align-items: center;
     width: 360px;
     height: 104px;
+`
+
+export const Img = styled.img`
+    :hover{
+        transform: scale(1.1);
+        cursor:pointer;
+    }
 `

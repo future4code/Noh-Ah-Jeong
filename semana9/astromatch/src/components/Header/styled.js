@@ -9,3 +9,10 @@ export const HeaderContainer = styled.div`
     border-bottom: 2px solid gainsboro;
     margin-bottom: 16px;
 `
+
+export const Img = styled.img`
+    :hover{
+        transform: scale(1.1);
+        cursor:pointer;
+    }
+`
