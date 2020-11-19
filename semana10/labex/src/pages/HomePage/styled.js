@@ -10,23 +10,8 @@ export const MainContainer = styled.div`
 
 export const ButtonContainer = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-end;
-    padding-top: 5vh;
-`
-
-export const AdminButton = styled.button`
-    border: 2px solid #f44336;
-    border-radius: 5em;
-    color: #f44336;
-    background-color: white;
-    padding: 1em;
-`
-
-export const FormButton = styled.button`
-    border: none;
-    border-radius: 5em;
-    color: white;
-    background-color: #008CBA;
-    padding: 2em;
+    width: 400px;
+    padding-top: 80px;
 `

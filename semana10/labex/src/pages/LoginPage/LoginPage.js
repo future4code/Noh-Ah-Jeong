@@ -2,17 +2,20 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { BaseURL } from '../../constants/urls'
+import { MainContainer, InputContainer, Input, ButtonContainer } from "./styled";
+import { BlueButton, YellowButton } from "../../components/Buttons/styled";
 
 function LoginPage() {
     const [emailInput, setEmailInput] = useState("")
     const [passwordInput, setPasswordInput] = useState("")
+
     const history = useHistory()
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-    
+
         if (token) {
-          history.push('/trips/list');
+            history.push('/trips/list')
         }
     }, [history])
 
@@ -45,14 +48,18 @@ function LoginPage() {
         history.goBack()
     }
 
-    return(
-        <div>
-            <p>Login</p>
-            <input value={emailInput} onChange={onChangeEmailInput} />
-            <input value={passwordInput} type='password' onChange={onChangePasswordInput} />
-            <button onClick={onClickLogin}>Entrar</button>
-            <button onClick={onClickGoBack}>Voltar</button>
-        </div>
+    return (
+        <MainContainer>
+            <h1>Login</h1>
+            <InputContainer>
+                <Input type='email' placeholder='Usuário' value={emailInput} onChange={onChangeEmailInput} />
+                <Input type='password' placeholder='Senha' value={passwordInput} onChange={onChangePasswordInput} />
+            </InputContainer>
+            <ButtonContainer>
+                <YellowButton onClick={onClickGoBack}>Voltar</YellowButton>
+                <BlueButton onClick={onClickLogin}>Entrar</BlueButton>
+            </ButtonContainer>
+        </MainContainer>
     )
 }
 

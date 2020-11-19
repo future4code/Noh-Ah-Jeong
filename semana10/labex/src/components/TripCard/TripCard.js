@@ -1,11 +1,11 @@
 import React from "react";
-import {} from "./styled";
+import { Container } from "./styled";
 
 const TripCard = (props) => {
   return (
-    <div>
+    <Container onClick={props.onClick}>
       <p>{props.name}</p>
-    </div>
+    </Container>
   )
 }
 

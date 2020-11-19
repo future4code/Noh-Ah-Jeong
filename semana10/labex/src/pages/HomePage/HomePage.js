@@ -1,6 +1,7 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
-import { MainContainer, ButtonContainer, AdminButton, FormButton } from "./styled";
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { MainContainer, ButtonContainer } from './styled';
+import { BlueButton, YellowButton } from '../../components/Buttons/styled';
 
 function HomePage() {
     const history = useHistory()
@@ -17,13 +18,13 @@ function HomePage() {
         <MainContainer>
             <h1>Bem Vind@ ao LabeX!</h1>
             <ButtonContainer>
-                <AdminButton onClick={goToLoginPage}>
+                <YellowButton onClick={goToLoginPage}>
                     Área do Administrador
-                </AdminButton>
+                </YellowButton>
 
-                <FormButton onClick={goToApplicationFormPage}>
-                    <h1>Quero me candidatar!</h1>
-                </FormButton>
+                <BlueButton onClick={goToApplicationFormPage}>
+                    Quero me candidatar!
+                </BlueButton>
             </ButtonContainer>
         </MainContainer>
     );

@@ -4,15 +4,19 @@ import { useHistory } from 'react-router-dom';
 import useProtectedPage from '../../hooks/useProtectedPage';
 import { BaseURL } from '../../constants/urls';
 import TripCard from '../../components/TripCard/TripCard';
+import { MainContainer, TripListCardContainer, ButtonContainer } from './styled';
+import { YellowButton } from '../../components/Buttons/styled';
 
 function ListTripsPage() {
     useProtectedPage()
+
     const [tripList, setTripList] = useState([])
+    
     const history = useHistory()
 
     useEffect(() => {
-        getTripList();
-    }, []);
+        getTripList()
+    }, [])
 
     const getTripList = () => {
         axios
@@ -21,12 +25,12 @@ function ListTripsPage() {
                 setTripList(response.data.trips)
             })
             .catch((error) => {
-                alert("Erro no getTripList")
+                alert("Erro ao pegar lista de viagens!")
             })
     }
 
     const TripListCard = tripList.map((trip) => {
-        return(
+        return (
             <TripCard
                 key={trip.id}
                 name={trip.name}
@@ -34,21 +38,32 @@ function ListTripsPage() {
                 description={trip.description}
                 duration={trip.durationInDays}
                 planet={trip.planet}
+                onClick={() => goToTripDetailsPage(trip.id)}
             />
         )
     })
+
+    const goToTripDetailsPage = (id) => {
+        history.push(`/trips/details/${id}`)
+    }
 
     const onClickLogout = () => {
         localStorage.removeItem('token')
         history.push('/')
     }
 
-    return(
-        <div>
-            <button onClick={onClickLogout}>Logout</button>
-            <p>Página lista.</p>
-            {TripListCard}
-        </div>
+    return (
+        <MainContainer>
+            <h1>Lista de Viagens</h1>
+            
+            <TripListCardContainer>
+                {TripListCard}
+            </TripListCardContainer>
+
+            <ButtonContainer>
+                <YellowButton onClick={onClickLogout}>Logout</YellowButton>
+            </ButtonContainer>
+        </MainContainer>
     )
 }
 
