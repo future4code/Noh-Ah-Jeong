@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import { BaseURL } from '../../constants/urls'
+import { BaseURL } from '../../constants/API'
 import { MainContainer, InputContainer, Input, ButtonContainer } from "./styled";
 import { BlueButton, YellowButton } from "../../components/Buttons/styled";
 

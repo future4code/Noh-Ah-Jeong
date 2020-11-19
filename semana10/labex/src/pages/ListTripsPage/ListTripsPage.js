@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import useProtectedPage from '../../hooks/useProtectedPage';
-import { BaseURL } from '../../constants/urls';
+import { BaseURL } from '../../constants/API';
 import TripCard from '../../components/TripCard/TripCard';
 import { MainContainer, TripListCardContainer, ButtonContainer } from './styled';
 import { YellowButton } from '../../components/Buttons/styled';

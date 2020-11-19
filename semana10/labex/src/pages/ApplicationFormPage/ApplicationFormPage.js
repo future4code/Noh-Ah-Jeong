@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from "../../hooks/useForm";
 import { MainContainer, Form, ButtonContainer, Input, Select } from './styled';
 import { BlueButton, YellowButton } from '../../components/Buttons/styled'
 import axios from "axios";
-import { BaseURL } from '../../constants/urls';
+import { BaseURL } from '../../constants/API';
 
 function ApplicationFormPage() {
+    const [tripList, setTripList] = useState([])
+
+    useEffect(() => {
+        getTripList()
+    }, [])
+
+    const getTripList = () => {
+        axios
+            .get(`${BaseURL}/trips`)
+            .then((response) => {
+                setTripList(response.data.trips)
+            })
+            .catch((error) => {
+                alert("Erro ao pegar lista de viagens!")
+            })
+    }
+
     const { form, onChange, resetState } = useForm({
         name: "",
-        age: 0,
-        profission: "",
+        age: "",
+        profession: "",
         country: "",
-        trip: "",
-        applicationText: ""
+        applicationText: "",
+        trip: ""
     })
 
     const handleInputChange = (event) => {
@@ -25,16 +42,28 @@ function ApplicationFormPage() {
     const handleSubmittion = (event) => {
         event.preventDefault()
 
-        console.log(form)
+        applyToTrip()
 
         resetState()
     }
 
     const applyToTrip = () => {
+        const body = {
+            "name": form.name,
+            "age": form.age,
+            "applicationText": form.applicationText,
+            "profession": form.profession,
+            "country": form.country
+        }
+
         axios
-            .get(`${BaseURL}/trips/${id}/apply`)
-            .then()
-            .catch()
+            .post(`${BaseURL}/trips/${form.trip}/apply`, body)
+            .then((response) => {
+                alert("Formulário foi enviado!")
+            })
+            .catch((error) => {
+                alert("Formulário não foi enviado!")
+            })
     }
 
     const history = useHistory()
@@ -69,8 +98,8 @@ function ApplicationFormPage() {
                     required
                 />
                 <Input
-                    value={form.profission}
-                    name="profission"
+                    value={form.profession}
+                    name="profession"
                     onChange={handleInputChange}
                     type='text'
                     pattern='[A-z0-9À-ž\s]{10,}'
@@ -340,8 +369,15 @@ function ApplicationFormPage() {
                     value={form.trip}
                     name="trip"
                     onChange={handleInputChange}
+                    required
                 >
                     <option value="" disabled selected>Viagem</option>
+                    {tripList.map((trip) => {
+                        return (
+                            <option value={trip.id} key={trip.id}>
+                                {trip.name}
+                            </option>
+                        )})}
                 </Select>
                 <Input
                     value={form.applicationText}
