@@ -1,36 +1,43 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from 'react-router-dom';
-import { MainContainer, FormContainer, ButtonContainer, Input, Select } from './styled';
+import { useForm } from "../../hooks/useForm";
+import { MainContainer, Form, ButtonContainer, Input, Select } from './styled';
 import { BlueButton, YellowButton } from '../../components/Buttons/styled'
+import axios from "axios";
+import { BaseURL } from '../../constants/urls';
 
 function ApplicationFormPage() {
-    const [nameInput, setNameInput] = useState("")
-    const [ageInput, setAgeInput] = useState("")
-    const [profissionInput, setProfissionInput] = useState("")
-    const [countryInput, setCountryInput] = useState("")
-    const [tripInput, setTripInput] = useState("")
-    const [textInput, setTextInput] = useState("")
+    const { form, onChange, resetState } = useForm({
+        name: "",
+        age: 0,
+        profission: "",
+        country: "",
+        trip: "",
+        applicationText: ""
+    })
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target
+
+        onChange(name, value)
+    }
+
+    const handleSubmittion = (event) => {
+        event.preventDefault()
+
+        console.log(form)
+
+        resetState()
+    }
+
+    const applyToTrip = () => {
+        axios
+            .get(`${BaseURL}/trips/${id}/apply`)
+            .then()
+            .catch()
+    }
 
     const history = useHistory()
-
-    const onChangeNameInput = (event) => {
-        setNameInput(event.target.value)
-    }
-    const onChangeAgeInput = (event) => {
-        setAgeInput(event.target.value)
-    }
-    const onChangeProfissionInput = (event) => {
-        setProfissionInput(event.target.value)
-    }
-    const onChangeCountryInput = (event) => {
-        setCountryInput(event.target.value)
-    }
-    const onChangeTripInput = (event) => {
-        setTripInput(event.target.value)
-    }
-    const onChangeTextInput = (event) => {
-        setTextInput(event.target.value)
-    }
 
     const onClickGoBack = () => {
         history.goBack()
@@ -40,11 +47,43 @@ function ApplicationFormPage() {
         <MainContainer>
             <h1>Aplicar para viagem</h1>
 
-            <FormContainer>
-                <Input type='text' placeholder='Nome' value={nameInput} onChange={onChangeNameInput} />
-                <Input type='number' placeholder='Idade' value={ageInput} onChange={onChangeAgeInput} />
-                <Input type='text' placeholder='Profissão' value={profissionInput} onChange={onChangeProfissionInput} />
-                <Select name="country">
+            <Form onSubmit={handleSubmittion}>
+                <Input
+                    value={form.name}
+                    name="name"
+                    onChange={handleInputChange}
+                    type='text'
+                    pattern='[A-z0-9À-ž\s]{3,}'
+                    title="No mínimo 3 letras"
+                    placeholder="Nome"
+                    required
+                />
+                <Input
+                    value={form.age}
+                    name="age"
+                    onChange={handleInputChange}
+                    type='number'
+                    min="18"
+                    title="No mínimo 18 anos"
+                    placeholder="Idade"
+                    required
+                />
+                <Input
+                    value={form.profission}
+                    name="profission"
+                    onChange={handleInputChange}
+                    type='text'
+                    pattern='[A-z0-9À-ž\s]{10,}'
+                    title="No mínimo 10 caracteres"
+                    placeholder="Profissão"
+                    required
+                />
+                <Select
+                    value={form.country}
+                    name="country"
+                    onChange={handleInputChange}
+                    required
+                >
                     <option value="" disabled selected>País</option>
                     <option value="Brasil">Brasil</option>
                     <option value="Afeganistão">Afeganistão</option>
@@ -297,13 +336,25 @@ function ApplicationFormPage() {
                     <option value="Zimbabwe">Zimbabwe</option>
                     <option value="Zâmbia">Zâmbia</option>
                 </Select>
-                <Select>
+                <Select
+                    value={form.trip}
+                    name="trip"
+                    onChange={handleInputChange}
+                >
                     <option value="" disabled selected>Viagem</option>
                 </Select>
-                <Input type='text' placeholder='Texto de aplicação' value={textInput} onChange={setTextInput} />
-                <br />
+                <Input
+                    value={form.applicationText}
+                    name="applicationText"
+                    onChange={handleInputChange}
+                    type='text'
+                    pattern='[A-z0-9À-ž\s]{30,}'
+                    title="No mínimo 30 caracteres"
+                    placeholder="Porque sou um bom candidato?"
+                    required
+                />
                 <BlueButton>Inscrever-se</BlueButton>
-            </FormContainer>
+            </Form>
 
             <ButtonContainer>
                 <YellowButton onClick={onClickGoBack}>Voltar</YellowButton>
