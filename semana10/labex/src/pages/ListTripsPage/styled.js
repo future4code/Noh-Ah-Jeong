@@ -21,7 +21,7 @@ export const TripListCardContainer = styled.div`
 
 export const ButtonContainer = styled.div`
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     width: 400px;
     padding-top: 40px;

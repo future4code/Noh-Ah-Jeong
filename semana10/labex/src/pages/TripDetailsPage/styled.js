@@ -40,9 +40,9 @@ export const ButtonContainer = styled.div`
 
 export const ApproveButton = styled.button`
     border: 2px solid ${darkBlue};
-    border-radius: 50%;
+    border-radius: 10%;
     background-color: ${mainBlue};
-    padding: 1em;
+    padding: 0.5em;
     margin: 0 16px;
     cursor: pointer;
     outline: none;
@@ -56,9 +56,9 @@ export const ApproveButton = styled.button`
 
 export const RejectButton = styled.button`
     border: 2px solid ${darkYellow};
-    border-radius: 50%;
+    border-radius: 10%;
     background-color: ${mainYellow};
-    padding: 1em;
+    padding: 0.5em;
     cursor: pointer;
     outline: none;
     :active {

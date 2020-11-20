@@ -71,8 +71,8 @@ function TripDetailsPage() {
                         return(
                             <CandidateContainer key={candidate.id}>
                                 {candidate.name}
-                                <ApproveButton onClick={() => decideCandidate(candidate.id, true)}></ApproveButton>
-                                <RejectButton onClick={() => decideCandidate(candidate.id, false)}></RejectButton>
+                                <ApproveButton onClick={() => decideCandidate(candidate.id, true)}>o</ApproveButton>
+                                <RejectButton onClick={() => decideCandidate(candidate.id, false)}>x</RejectButton>
                             </CandidateContainer>
                         )
                     })}

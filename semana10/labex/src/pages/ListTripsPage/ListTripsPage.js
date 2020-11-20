@@ -5,7 +5,7 @@ import useProtectedPage from '../../hooks/useProtectedPage';
 import { BaseURL } from '../../constants/API';
 import TripCard from '../../components/TripCard/TripCard';
 import { MainContainer, TripListCardContainer, ButtonContainer } from './styled';
-import { YellowButton } from '../../components/Buttons/styled';
+import { YellowButton, BlueButton } from '../../components/Buttons/styled';
 
 function ListTripsPage() {
     useProtectedPage()
@@ -52,6 +52,10 @@ function ListTripsPage() {
         history.push('/')
     }
 
+    const onClickGoToCreateTripPage = () => {
+        history.push('/trips/create')
+    }
+
     return (
         <MainContainer>
             <h1>Lista de Viagens</h1>
@@ -62,6 +66,7 @@ function ListTripsPage() {
 
             <ButtonContainer>
                 <YellowButton onClick={onClickLogout}>Logout</YellowButton>
+                <BlueButton onClick={onClickGoToCreateTripPage}>Criar Viagem</BlueButton>
             </ButtonContainer>
         </MainContainer>
     )
