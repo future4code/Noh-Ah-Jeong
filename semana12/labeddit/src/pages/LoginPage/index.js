@@ -1,19 +1,20 @@
 import React from 'react'
-import axios from 'axios'
-import { useHistory } from 'react-router-dom'
 import { MainContainer, FormContainer } from './styled'
-import { useForm } from "../../hooks/useForm"
-import { BASE_URL } from '../../constants/url'
+import { useHistory } from 'react-router-dom'
+import { useForm } from '../../hooks/useForm'
+import { useUnprotectPage } from '../../hooks/useUnprotectPage'
+import { login } from '../../services/user'
+import { TextField, Button } from '@material-ui/core'
 
-import Button from '@material-ui/core/Button'
-import TextField from '@material-ui/core/TextField'
+// Dados para logar:
+// email: noh@gmail.com
+// senha: 123
 
 const LoginPage = () => {
+    useUnprotectPage()
+
     const history = useHistory()
-    const goToFeed = (history) => {
-        history.push("/feed");
-    };
-    
+
     const { form, onChangeInput } = useForm({
         email: "",
         password: "",
@@ -21,49 +22,41 @@ const LoginPage = () => {
 
     const onSubmit = (event) => {
         event.preventDefault()
-
-        const body = {
-            email: form.email,
-            password: form.password
-        }
-
-        axios
-            .post(`${BASE_URL}/login`, body)
-            .then((response) => {
-                // localStorage.setItem('token', response.data.token)
-                goToFeed()
-                console.log(response)
-            })
-            .catch((error) => {
-                alert("Usuário e/ou senha errado!")
-                console.log(error)
-            })
+        login(form, history)
     }
 
     return (
         <MainContainer>
             <FormContainer onSubmit={onSubmit}>
-                <input
-                    required
+                <TextField
                     label="E-mail"
-                    type='email'
-                    onChange={onChangeInput}
+                    variant="outlined"
+                    type="email"
+                    name="email"
                     value={form.email}
-                    name={'email'}
-                />
-                <input
-                    required
-                    label="Senha"
-                    type='password'
                     onChange={onChangeInput}
-                    value={form.password}
-                    name={'password'}
                 />
-                <button>
+                <TextField
+                    label="Senha"
+                    variant="outlined"
+                    type="password"
+                    name="password"
+                    value={form.password}
+                    onChange={onChangeInput}
+                />
+                <Button
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                >
                     Entrar
-                </button>
+                </Button>
             </FormContainer>
-            <Button variant='contained' color='primary' href='/signup' >
+            <Button
+                variant='contained'
+                color='primary'
+                href='/signup'
+            >
                 Cadastrar
             </Button>
         </MainContainer>
