@@ -25,7 +25,7 @@ const Router = () => {
                     <FeedPage />
                 </Route>
 
-                <Route exact path='/post'>
+                <Route exact path='/feed/:id'>
                     <PostPage />
                 </Route>
 

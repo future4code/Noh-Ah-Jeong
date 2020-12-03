@@ -1,21 +1,70 @@
 import React from 'react'
-import { MainContainer } from './styled'
-import { useProtectPage } from '../../hooks/useProtectPage' 
+import { MainContainer, FormContainer } from './styled'
+import { useProtectPage } from '../../hooks/useProtectPage'
+import { useRequestData } from '../../hooks/useRequestData'
+import { useHistory } from 'react-router-dom';
+import { useForm } from '../../hooks/useForm'
+import { BASE_URL } from "../../constants/url"
+import PostCard from '../../components/PostCard'
+import { TextField, Button } from '@material-ui/core'
+import { createPost } from '../../services/post'
 
 const FeedPage = () => {
     useProtectPage()
 
+    const getPosts = useRequestData(`${BASE_URL}/posts`, undefined)
+    const postsList = getPosts && getPosts.posts.map((post) => {
+        return (
+            <PostCard
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                text={post.text}
+                username={post.username}
+                votesCount={post.votesCount}
+                userVoteDirection={post.userVoteDirection}
+                commentsCount={post.commentsCount}
+            />
+        )
+    })
+
+    const history = useHistory()
+    const { form, onChangeInput } = useForm({
+        text: "",
+        title: "",
+    })
+    const onSubmit = (event) => {
+        event.preventDefault()
+        
+        createPost(form, history)
+    }
+
     return (
         <MainContainer>
-            <div>
-                <div>Escreva seu post</div>
-                <button>postar</button>
-            </div>
-            <div>
-                <div>nome de usuário</div>
-                <div>texto do post</div>
-                <div>0 votes 0 comentarios</div>
-            </div>
+            <FormContainer onSubmit={onSubmit}>
+                <TextField
+                    label="Título do Post"
+                    variant="outlined"
+                    name="title"
+                    value={form.title}
+                    onChange={onChangeInput}
+                />
+                <TextField
+                    label="Texto do Post"
+                    variant="outlined"
+                    name="text"
+                    value={form.text}
+                    onChange={onChangeInput}
+                />
+                <Button
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                >
+                    Criar Post
+                </Button>
+            </FormContainer>
+            { postsList }
         </MainContainer>
     );
 }

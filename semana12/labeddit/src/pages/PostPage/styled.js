@@ -9,15 +9,9 @@ export const MainContainer = styled.div`
     margin: auto;
 `
 
-export const FormContainer = styled.form`
-    height: 160px;
+export const PostContainer = styled.div`
     width: 98%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    height: 20vh;
     border: 1px solid black;
     border-radius: 5px;
-    margin: 20px;
-    padding: 8px 0;
 `

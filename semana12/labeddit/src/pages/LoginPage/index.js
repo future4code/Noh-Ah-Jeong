@@ -19,7 +19,6 @@ const LoginPage = () => {
         email: "",
         password: "",
     })
-
     const onSubmit = (event) => {
         event.preventDefault()
         login(form, history)
