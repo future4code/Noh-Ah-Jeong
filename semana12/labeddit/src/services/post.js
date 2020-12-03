@@ -1,8 +1,7 @@
 import axios from "axios"
 import { BASE_URL } from "../constants/url"
-import { goToFeed } from "../routes/coordinator"
 
-export const createPost = (body, history) => {
+export const createPost = (body) => {
     const token = localStorage.getItem("token")
     
     axios.post(`${BASE_URL}/posts`, body, {
@@ -11,9 +10,21 @@ export const createPost = (body, history) => {
         }
     }).then((response) => {
         alert("Post criado!")
-
-        goToFeed(history)
     }).catch(error => {
         alert("Não foi possível criar o post!")
+    })
+}
+
+export const createComment = (body, params) => {
+    const token = localStorage.getItem("token")
+    
+    axios.post(`${BASE_URL}/posts/${params.id}/comment`, body, {
+        headers: {
+            Authorization: token
+        }
+    }).then((response) => {
+        alert("Comentário criado!")
+    }).catch(error => {
+        alert("Não foi possível criar o comentário!")
     })
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { PostCardContainer, Heading, UserHeading, TitleHeading } from './styled'
+import { PostCardContainer, Heading, UserHeading, TitleHeading, ClickableDiv } from './styled'
 import { goToPost } from '../../routes/coordinator'
 import { useHistory } from "react-router-dom";
 
@@ -21,9 +21,11 @@ const PostCard = (props) => {
                     </Heading>
                 </AccordionSummary>
                 <AccordionDetails onClick={() => goToPost(history, props.id)}>
-                    <Typography>
-                        {props.text}
-                    </Typography>
+                    <ClickableDiv>
+                        <Typography>
+                            {props.text}
+                        </Typography>
+                    </ClickableDiv>
                 </AccordionDetails>
                 <AccordionActions>
                     {props.votesCount} votes {props.commentsCount} comentários

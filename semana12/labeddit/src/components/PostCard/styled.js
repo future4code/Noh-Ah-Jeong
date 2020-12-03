@@ -20,3 +20,10 @@ export const TitleHeading = styled.p`
     flex-basis: 70%;
     margin-left: 16px;
 `
+
+export const ClickableDiv = styled.div`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+`

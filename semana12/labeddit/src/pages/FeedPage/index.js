@@ -2,12 +2,11 @@ import React from 'react'
 import { MainContainer, FormContainer } from './styled'
 import { useProtectPage } from '../../hooks/useProtectPage'
 import { useRequestData } from '../../hooks/useRequestData'
-import { useHistory } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm'
 import { BASE_URL } from "../../constants/url"
 import PostCard from '../../components/PostCard'
-import { TextField, Button } from '@material-ui/core'
 import { createPost } from '../../services/post'
+import { TextField, Button } from '@material-ui/core'
 
 const FeedPage = () => {
     useProtectPage()
@@ -28,7 +27,6 @@ const FeedPage = () => {
         )
     })
 
-    const history = useHistory()
     const { form, onChangeInput } = useForm({
         text: "",
         title: "",
@@ -36,7 +34,9 @@ const FeedPage = () => {
     const onSubmit = (event) => {
         event.preventDefault()
         
-        createPost(form, history)
+        createPost(form)
+
+        window.location.reload();
     }
 
     return (
