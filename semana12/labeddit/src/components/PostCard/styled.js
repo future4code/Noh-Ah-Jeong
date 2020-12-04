@@ -21,9 +21,26 @@ export const TitleHeading = styled.p`
     margin-left: 16px;
 `
 
-export const ClickableDiv = styled.div`
+export const PostTextContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+`
+
+export const PostActionContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+`
+
+export const VoteContainer = styled.div`
     display: flex;
     align-items: center;
-    width: 100%;
-    cursor: pointer;
+`
+
+export const CommentButtonConatiner = styled.div`
+    display: flex;
+    align-items: center;
 `

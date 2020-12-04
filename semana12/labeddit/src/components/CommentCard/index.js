@@ -1,13 +1,14 @@
 import React from 'react'
-import { CommentCardContainer } from './styled'
+import { CommentCardContainer, CommentTextContainer } from './styled'
 
 const CommentCard = (props) => {
 
     return (
         <CommentCardContainer>
             <p>{props.username}</p>
-
-            <p>{props.text}</p>
+            <CommentTextContainer>
+                <p>{props.text}</p>
+            </CommentTextContainer>
 
             <p>{props.votesCount} votes</p>
         </CommentCardContainer>

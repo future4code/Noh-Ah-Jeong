@@ -6,7 +6,7 @@ import { useForm } from '../../hooks/useForm'
 import { BASE_URL } from "../../constants/url"
 import PostCard from '../../components/PostCard'
 import { createPost } from '../../services/post'
-import { TextField, Button } from '@material-ui/core'
+import { CircularProgress, TextField, Button } from '@material-ui/core'
 
 const FeedPage = () => {
     useProtectPage()
@@ -33,40 +33,49 @@ const FeedPage = () => {
     })
     const onSubmit = (event) => {
         event.preventDefault()
-        
+
         createPost(form)
 
-        window.location.reload();
+        window.location.reload()
     }
 
-    return (
-        <MainContainer>
-            <FormContainer onSubmit={onSubmit}>
-                <TextField
-                    label="Título do Post"
-                    variant="outlined"
-                    name="title"
-                    value={form.title}
-                    onChange={onChangeInput}
-                />
-                <TextField
-                    label="Texto do Post"
-                    variant="outlined"
-                    name="text"
-                    value={form.text}
-                    onChange={onChangeInput}
-                />
-                <Button
-                    variant="contained"
-                    color="primary"
-                    type="submit"
-                >
-                    Criar Post
-                </Button>
-            </FormContainer>
-            { postsList }
-        </MainContainer>
-    );
+    if (getPosts) {
+        return (
+            <MainContainer>
+                <FormContainer onSubmit={onSubmit}>
+                    <TextField
+                        label="Título do Post"
+                        variant="outlined"
+                        name="title"
+                        value={form.title}
+                        onChange={onChangeInput}
+                    />
+                    <TextField
+                        label="Texto do Post"
+                        variant="outlined"
+                        name="text"
+                        value={form.text}
+                        onChange={onChangeInput}
+                    />
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        type="submit"
+                    >
+                        Criar Post
+                    </Button>
+                </FormContainer>
+                { postsList}
+            </MainContainer>
+        )
+    } else {
+        return (
+            <MainContainer>
+                <CircularProgress />
+            </MainContainer>
+        )
+    }
+    
 }
 
 export default FeedPage;
