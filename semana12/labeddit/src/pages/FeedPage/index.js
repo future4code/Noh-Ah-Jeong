@@ -21,7 +21,6 @@ const FeedPage = () => {
                 text={post.text}
                 username={post.username}
                 votesCount={post.votesCount}
-                userVoteDirection={post.userVoteDirection}
                 commentsCount={post.commentsCount}
             />
         )
@@ -65,7 +64,7 @@ const FeedPage = () => {
                         Criar Post
                     </Button>
                 </FormContainer>
-                { postsList}
+                {postsList}
             </MainContainer>
         )
     } else {
@@ -75,7 +74,7 @@ const FeedPage = () => {
             </MainContainer>
         )
     }
-    
+
 }
 
 export default FeedPage;

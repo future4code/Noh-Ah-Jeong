@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
 export const CommentCardContainer = styled.div`
-    width: 98%;
+    display: flex;
+    flex-direction: column;
+    width: 448px;
     border: 1px solid black;
     border-radius: 5px;
+    padding: 0 16px;
 `
 
 export const CommentTextContainer = styled.div`
@@ -11,4 +14,9 @@ export const CommentTextContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0 16px;
+`
+
+export const VoteContainer = styled.div`
+    display: flex;
+    align-items: center;
 `

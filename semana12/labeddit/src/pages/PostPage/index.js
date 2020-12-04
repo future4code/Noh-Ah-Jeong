@@ -1,5 +1,5 @@
 import React from 'react'
-import { MainContainer, PostContainer, FormContainer } from './styled'
+import { MainContainer, PostContainer, Heading, UserHeading, TitleHeading, PostTextContainer, FormContainer } from './styled'
 import { useParams } from 'react-router-dom';
 import { useProtectPage } from '../../hooks/useProtectPage'
 import { useRequestData } from '../../hooks/useRequestData'
@@ -22,8 +22,6 @@ const PostPage = () => {
         event.preventDefault()
 
         createComment(form, params)
-
-        window.location.reload();
     }
 
     const commentList = postDetail && postDetail.comments.map((comment) => {
@@ -42,9 +40,13 @@ const PostPage = () => {
         return (
             <MainContainer>
                 <PostContainer>
-                    <div>{postDetail.username}</div>
-                    <div>{postDetail.title}</div>
-                    <div>{postDetail.text}</div>
+                    <Heading>
+                        <UserHeading>{postDetail.username}</UserHeading>
+                        <TitleHeading>{postDetail.title}</TitleHeading>
+                    </Heading>
+                    <PostTextContainer>
+                        {postDetail.text}
+                    </PostTextContainer>
                 </PostContainer>
 
                 <FormContainer onSubmit={onSubmit}>
@@ -64,7 +66,7 @@ const PostPage = () => {
                 </Button>
                 </FormContainer>
 
-                { commentList }
+                {commentList}
 
             </MainContainer>
         )

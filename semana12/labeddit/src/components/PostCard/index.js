@@ -4,10 +4,11 @@ import { goToPost } from '../../routes/coordinator'
 import { useHistory } from "react-router-dom"
 import { votePost } from '../../services/post'
 
-import { Accordion, AccordionSummary, Typography } from '@material-ui/core'
+import { Accordion, AccordionSummary, IconButton, Typography } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
+import CommentIcon from '@material-ui/icons/Comment'
 
 const PostCard = (props) => {
     const history = useHistory()
@@ -36,12 +37,19 @@ const PostCard = (props) => {
                 </PostTextContainer>
                 <PostActionContainer>
                     <VoteContainer>
-                        <ArrowUpwardIcon onClick={() => handleVote(1)} />
+                        <IconButton>
+                            <ArrowUpwardIcon onClick={() => handleVote(1)} />
+                        </IconButton>
                         <p>{props.votesCount}</p>
-                        <ArrowDownwardIcon onClick={() => handleVote(-1)} />
+                        <IconButton>
+                            <ArrowDownwardIcon onClick={() => handleVote(-1)} />
+                        </IconButton>
                     </VoteContainer>
-                    <CommentButtonConatiner onClick={() => goToPost(history, props.id)}>
+                    <CommentButtonConatiner>
                         <p>{props.commentsCount} comentários</p>
+                        <IconButton>
+                            <CommentIcon onClick={() => goToPost(history, props.id)} />
+                        </IconButton>
                     </CommentButtonConatiner>
                 </PostActionContainer>
             </Accordion>
