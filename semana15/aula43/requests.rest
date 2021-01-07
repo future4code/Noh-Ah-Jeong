@@ -1,0 +1,25 @@
+### Request exercício 1
+GET http://localhost:3003/allUsers
+
+### Request exercício 2
+GET http://localhost:3003/user?type=normal
+
+### Request exercício 3
+GET http://localhost:3003/user/corageM
+
+### Request exercício 4
+PUT  http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "Mulan",
+    "email": "mulan@email.com",
+    "type": "NORMAL",
+    "age": 27
+}
+
+### Request exercício 5
+PUT http://localhost:3003/changeLastUser
+
+### Request exercício 5
+PATCH  http://localhost:3003/patchLastUser
