@@ -134,7 +134,8 @@ WHERE name LIKE "G%" OR name LIKE "%g%";
 d. Query:
 ```
 SELECT * FROM Actor
-WHERE (name LIKE "%g%" OR name LIKE "%G%" OR name LIKE "%a%" OR name LIKE "%A%") AND salary BETWEEN 350000 AND 900000;
+WHERE (name LIKE "%g%" OR name LIKE "%G%" OR name LIKE "%a%" OR name LIKE "%A%")
+AND salary BETWEEN 350000 AND 900000;
 ```
 
 ### Exercício 5
@@ -211,4 +212,35 @@ SELECT * FROM Movies
 WHERE name = "Se Eu Fosse Você";
 ```
 
+c. Query:
+```
+SELECT id, name, synopsis FROM Movies
+WHERE rating > 7;
+```
+
 ### Exercício 7
+a. Query:
+```
+SELECT * FROM Movies
+WHERE name LIKE "%vida%";
+```
+
+b. Query:
+```
+SELECT * FROM Movies
+WHERE name LIKE "%senhora%" OR synopsis LIKE "%senhora%";
+```
+
+c. Query:
+```
+SELECT * FROM Movies
+WHERE release_date < "2021-01-11";
+```
+
+d. Query:
+```
+SELECT * FROM Movies
+WHERE release_date < "2021-01-11"
+AND (name LIKE "%senhora%" OR synopsis LIKE "%senhora%")
+AND rating > 7;
+```
