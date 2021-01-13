@@ -106,23 +106,94 @@ app.post("/actor", async (req: Request, res: Response) => {
 
 b. Endpoint:
 ```
+app.delete("/actor/:id", async (req: Request, res: Response) => {
+    try {
+        const id = req.params.id
+        await deleteActorById(id)
 
+        res.status(200).send({ message: "Deleted" })
+    } catch (error) {
+        res.status(400).send({ message: error.message })
+    }
+})
 ```
 
 ### Exercício 5
-a. Query:
 ```
+const createMovie = async (
+    id: string,
+    name: string,
+    synopsis: string,
+    releaseDate: Date,
+    rating: number
+): Promise<void> => {
+    await connection
+        .insert({
+            id: id,
+            name: name,
+            synopsis: synopsis,
+            release_date: releaseDate,
+            rating: rating,
+        })
+        .into("Movies")
+}
 
+app.post("/movie", async (req: Request, res: Response) => {
+    try {
+        await createMovie(
+            req.body.id,
+            req.body.name,
+            req.body.synopsis,
+            new Date(req.body.releaseDate),
+            req.body.rating
+        )
+
+        res.status(200).send({ message: "Created" })
+    } catch (error) {
+        res.status(400).send({ message: error.message })
+    }
+})
 ```
 
 ### Exercício 6
-a. Query:
 ```
+const getAllMovies = async (): Promise<any> => {
+    const result = await connection.raw(`
+      SELECT * FROM Movies LIMIT 15
+    `)
 
+    return result[0]
+}
+
+app.get("/movie/all", async (req: Request, res: Response) => {
+    try {
+        const movies = await getAllMovies()
+
+        res.status(200).send({ movies })
+    } catch (error) {
+        res.status(400).send({ message: error.message })
+    }
+})
 ```
 
 ### Exercício 7
-a. Query:
 ```
+const searchMovieByNameOrSynopsis = async (query: string): Promise<any> => {
+    const result = await connection.raw(`
+      SELECT * FROM Movies WHERE name LIKE '%${query}%' OR synopsis LIKE '%${query}%' ORDER BY release_date
+    `)
 
+    return result[0]
+}
+
+app.get("/movie/search", async (req: Request, res: Response) => {
+    try {
+        const query = req.query.query as string
+        const result = await searchMovieByNameOrSynopsis(query)
+
+        res.status(200).send({ result })
+    } catch (error) {
+        res.status(400).send({ message: error.message })
+    }
+})
 ```
