@@ -1,0 +1,25 @@
+### Cadastrar novo usuário
+POST http://localhost:3003/users
+Content-Type: application/json
+ 
+{
+    "username": "Nilce",
+    "cpf": "11111111112",
+    "birthDate": "31/08/1980"
+}
+
+### Listar todos usuários
+GET http://localhost:3003/users
+
+### Saldo por CPF
+GET http://localhost:3003/users/11111111112
+
+### Adicionar saldo
+PUT http://localhost:3003/addToBalance
+Content-Type: application/json
+ 
+{
+    "username": "Nilce",
+    "cpf": "11111111112",
+    "value": "500"
+}
