@@ -1,0 +1,13 @@
+http://localhost:3003/users/all
+
+###
+
+http://localhost:3003/users/search?name=a
+
+###
+
+http://localhost:3003/users/operations
+
+###
+
+http://localhost:3003/users/search
