@@ -7,6 +7,8 @@ import { getAllUsers } from "./endpoints/getAllUsers"
 import { getUsersByName } from "./endpoints/getUsersByName"
 import { getUsersByType } from "./endpoints/getUsersByType"
 import { getUsersOrderedByNameOrType } from "./endpoints/getUsersOrderedByNameOrType"
+import { getFiveUsersPerTime } from "./endpoints/getFiveUsersPerTime"
+import { getUsersWithAllFunctionalities } from "./endpoints/getUsersWithAllFunctionalities"
 
 dotenv.config()
 
@@ -31,10 +33,16 @@ app.get('/users/all', getAllUsers)
 app.get('/users/search', getUsersByName)
 
 // Exercício 1.b.
-app.get('/users/:type', getUsersByType)
+app.get('/users/search/:type', getUsersByType)
 
 // Exercício 2.
 app.get('/users/order', getUsersOrderedByNameOrType)
+
+// Exercício 3.
+app.get('/users/limited', getFiveUsersPerTime)
+
+// Exercício 4.
+app.get('/users/allFunctionalities', getUsersWithAllFunctionalities)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

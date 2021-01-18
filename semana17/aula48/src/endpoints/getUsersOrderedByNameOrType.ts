@@ -3,8 +3,20 @@ import selectUsersOrderedByNameOrType from "../data/selectUsersOrderedByNameAndT
 
 export const getUsersOrderedByNameOrType = async (req: Request, res: Response): Promise<void> => {
     try {
-        const orderInput = req.query.orderInput as string
-        const users = await selectUsersOrderedByNameOrType(orderInput)
+        const orderByWhat = req.query.orderByWhat as string
+        const orderByHow = req.query.orderByHow as string
+
+        if (!["name", "type"].includes(orderByWhat)) {
+            res.statusCode = 422
+            throw new Error(`"orderByWhat" aceita "name" ou "type"`)
+        }
+
+        if (!["ASC", "DESC"].includes(orderByHow)) {
+            res.statusCode = 422
+            throw new Error(`"orderByHow" aceita "ASC" ou "DESC"`)
+        }
+
+        const users = await selectUsersOrderedByNameOrType(orderByWhat, orderByHow)
 
         if (!users.length) {
             res.statusCode = 404
