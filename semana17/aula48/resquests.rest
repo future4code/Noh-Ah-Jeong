@@ -1,0 +1,21 @@
+http://localhost:3003/users/all
+
+### Exercício 1.a.
+
+http://localhost:3003/users/search?name=An
+
+### Exercício 1.b.
+
+http://localhost:3003/users/search/operations
+
+### Exercício 2.
+
+http://localhost:3003/users/order?orderByWhat=type&orderByHow=ASC
+
+### Exercício 3.
+
+http://localhost:3003/users/limited
+
+### Exercício 4.
+
+http://localhost:3003/users/allFunctionalities?name=an&orderByWhat=type&orderByHow=DESC&page=4
