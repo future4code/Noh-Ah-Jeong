@@ -1,0 +1,21 @@
+#### Cadastrar Usuário
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "email": "usuario4@email.com",
+    "password": "senha123"
+}
+
+### Login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "usuario4@email.com",
+    "password": "senha123"
+}
+
+### Receber Dados do Usuário Logado
+GET http://localhost:3000/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE1MmUxMWI0LWNhYjItNDljMS1iZWFkLTBjNzZmYzM1NmIzNCIsImlhdCI6MTYxMTYwMTMzOSwiZXhwIjoxNjExNjAxNjM5fQ.egdBJBGZpBOz5HzAgFT1T_8klmEc4MGApTeq1XM_r_w
