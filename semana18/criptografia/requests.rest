@@ -1,0 +1,26 @@
+#### Cadastrar Usuário
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "email": "admin@email.com",
+    "password": "admin123",
+    "role": "admin"
+}
+
+### Login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "admin@email.com",
+    "password": "admin123"
+}
+
+### Receber Dados do Usuário Logado
+GET http://localhost:3000/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBiMjE1ZjYwLThkNGItNDQzNS04ODQ4LTk2MWRiNjQ0NmE0YiIsInJvbGUiOiJ1bmRlZmluZWQiLCJpYXQiOjE2MTE2OTAxNTQsImV4cCI6MTYxMTY5MDQ1NH0.ZgoQ3lTFiDJoJxHg1OTSxc7KbE-sFJrLH0x6HHfTXkw
+
+### Excluir um Usuário
+DELETE http://localhost:3000/user/73691ef5-5edb-4f37-a9c7-3f6a0179cd64
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBiMjE1ZjYwLThkNGItNDQzNS04ODQ4LTk2MWRiNjQ0NmE0YiIsInJvbGUiOiJ1bmRlZmluZWQiLCJpYXQiOjE2MTE2OTAxNTQsImV4cCI6MTYxMTY5MDQ1NH0.ZgoQ3lTFiDJoJxHg1OTSxc7KbE-sFJrLH0x6HHfTXkw
