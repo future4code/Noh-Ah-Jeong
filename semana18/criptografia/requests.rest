@@ -1,0 +1,30 @@
+#### Cadastrar Usuário
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "email": "admin5@email.com",
+    "password": "admin123",
+    "role": "admin"
+}
+
+### Login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "admin5@email.com",
+    "password": "admin123"
+}
+
+### Receber Dados do Usuário Logado
+GET http://localhost:3000/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQwYTFjZWU1LTg4NTYtNDBkNy1iMjU3LTc0ODYzZWY4MjJmNiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYxMTY5MTAyNiwiZXhwIjoxNjExNjkxMzI2fQ.59Www0dgUq_QzSetUEPDxzkIb-kdKuqhNe6_UHkZk-g
+
+### Excluir um Usuário
+DELETE http://localhost:3000/user/6015bb36-8c77-4896-86ca-53cfd1bc27d8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQwYTFjZWU1LTg4NTYtNDBkNy1iMjU3LTc0ODYzZWY4MjJmNiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYxMTY5MTAyNiwiZXhwIjoxNjExNjkxMzI2fQ.59Www0dgUq_QzSetUEPDxzkIb-kdKuqhNe6_UHkZk-g
+
+### Receber Id e Email por Id
+GET http://localhost:3000/user
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQwYTFjZWU1LTg4NTYtNDBkNy1iMjU3LTc0ODYzZWY4MjJmNiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYxMTY5MTAyNiwiZXhwIjoxNjExNjkxMzI2fQ.59Www0dgUq_QzSetUEPDxzkIb-kdKuqhNe6_UHkZk-g
