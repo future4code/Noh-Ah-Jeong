@@ -1,0 +1,33 @@
+#### Cadastrar Usuário
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "email": "usuario1@email.com",
+    "password": "senha123",
+    "role": "NORMAL",
+    "cep": "01141000",
+    "address_number": "20",
+    "address_complement": "apto. 8000"
+}
+
+### Login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "admin@email.com",
+    "password": "senha123"
+}
+
+### Receber Dados do Usuário Logado
+GET http://localhost:3000/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRjMmNiOTM4LWVlOTUtNGQ2OS1hYWM1LWMwYjVlNzM0YTRhNiIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2MTE3Njg5NTcsImV4cCI6MTYxMTc2OTI1N30.mhE6QQ6M_GeoBqrHUKCnOwLEhKYK0ZY3adqd0ZXkwGU
+
+### Excluir um Usuário
+DELETE http://localhost:3000/user/d0a1cee5-8856-40d7-b257-74863ef822f6
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjliNzY4NDQ3LTgzY2QtNGNiZC05ZTRmLTJlN2RkMzcyYzgwNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYxMTc2ODgxMCwiZXhwIjoxNjExNzY5MTEwfQ.vgdA3ptj9OTvyNTaM2o7SwC5XFRFckRf2oOk8K8_e4U
+
+### Receber Id e Email por Id
+GET http://localhost:3000/user
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjliNzY4NDQ3LTgzY2QtNGNiZC05ZTRmLTJlN2RkMzcyYzgwNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYxMTc2OTAyMywiZXhwIjoxNjExNzY5MzIzfQ.AiS4lmDEJ9XhkasuGqnsOuEqE3ddsD5-AW8QXotdw6M
