@@ -8,7 +8,7 @@ import { user } from "../types/user"
 export const createUser = async (req: Request, res: Response) => {
     try {
         if (!req.body.email || !req.body.name || !req.body.password) {
-            throw new Error("Preencha todos os campos.")
+            throw new Error("Preencha os campos 'email', 'name', e 'password'.")
         }
 
         if (req.body.email.indexOf("@") === -1) {

@@ -24,3 +24,17 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAt
 ### Pegar próprio perfil
 GET http://localhost:3003/user/be54c071-8f48-4d08-8419-8ad16606d3c6
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAtNDQ0OC1hNDM0LWI1MDg2ZmZmODE1MiIsImlhdCI6MTYxMTg2NjI1NiwiZXhwIjoxNjExODY2ODU2fQ.Cwg82WFHvXogBDxQYO-rmP9hSEIswanHa3pREZ2OERI
+
+### Criar receita
+POST http://localhost:3003/recipe
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAtNDQ0OC1hNDM0LWI1MDg2ZmZmODE1MiIsImlhdCI6MTYxMTkzMjQxNCwiZXhwIjoxNjExOTM0MjE0fQ.7_-E6ZM_JvwuLDIgaaYWDUJD4VLCoojp5YWqWXlUhuc
+Content-Type: application/json
+
+{
+	"title": "Pão de queijo",
+	"description": "pão + queijo"
+}
+
+### Pegar receita
+GET http://localhost:3003/recipe/be54c071-8f48-4d08-8419-8ad16606d3c6
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAtNDQ0OC1hNDM0LWI1MDg2ZmZmODE1MiIsImlhdCI6MTYxMTg2NjI1NiwiZXhwIjoxNjExODY2ODU2fQ.Cwg82WFHvXogBDxQYO-rmP9hSEIswanHa3pREZ2OERI
