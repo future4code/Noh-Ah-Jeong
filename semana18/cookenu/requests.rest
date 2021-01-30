@@ -19,15 +19,15 @@ Content-Type: application/json
 
 ### Pegar próprio perfil
 GET http://localhost:3003/user/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAtNDQ0OC1hNDM0LWI1MDg2ZmZmODE1MiIsImlhdCI6MTYxMTg2NjI1NiwiZXhwIjoxNjExODY2ODU2fQ.Cwg82WFHvXogBDxQYO-rmP9hSEIswanHa3pREZ2OERI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAtNDQ0OC1hNDM0LWI1MDg2ZmZmODE1MiIsImlhdCI6MTYxMTk3MzAzMiwiZXhwIjoxNjExOTc0ODMyfQ.RqA-DCO5rlBPt-l3KqClL4mDapRJ4bP3GPaUI-rnYrY
 
-### Pegar próprio perfil
+### Pegar perfil de outro usuário
 GET http://localhost:3003/user/be54c071-8f48-4d08-8419-8ad16606d3c6
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAtNDQ0OC1hNDM0LWI1MDg2ZmZmODE1MiIsImlhdCI6MTYxMTg2NjI1NiwiZXhwIjoxNjExODY2ODU2fQ.Cwg82WFHvXogBDxQYO-rmP9hSEIswanHa3pREZ2OERI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNTRjMDcxLThmNDgtNGQwOC04NDE5LThhZDE2NjA2ZDNjNiIsImlhdCI6MTYxMTk2MzkwMSwiZXhwIjoxNjExOTY1NzAxfQ.TSyeBHDqwSYSCxl4hFhOtlPmr0ZPEIscm0P6BjE9RNg
 
 ### Criar receita
 POST http://localhost:3003/recipe
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAtNDQ0OC1hNDM0LWI1MDg2ZmZmODE1MiIsImlhdCI6MTYxMTkzMjQxNCwiZXhwIjoxNjExOTM0MjE0fQ.7_-E6ZM_JvwuLDIgaaYWDUJD4VLCoojp5YWqWXlUhuc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAtNDQ0OC1hNDM0LWI1MDg2ZmZmODE1MiIsImlhdCI6MTYxMTk0MDIwNSwiZXhwIjoxNjExOTQyMDA1fQ.Fm1b_EeBEfqNwenmXwEy8Z3P0imuR_1UqaT2-1cM6xc
 Content-Type: application/json
 
 {
@@ -36,5 +36,23 @@ Content-Type: application/json
 }
 
 ### Pegar receita
-GET http://localhost:3003/recipe/be54c071-8f48-4d08-8419-8ad16606d3c6
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAtNDQ0OC1hNDM0LWI1MDg2ZmZmODE1MiIsImlhdCI6MTYxMTg2NjI1NiwiZXhwIjoxNjExODY2ODU2fQ.Cwg82WFHvXogBDxQYO-rmP9hSEIswanHa3pREZ2OERI
+GET http://localhost:3003/recipe/6fd46733-35a4-4418-9ea2-29bee8915246
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNTRjMDcxLThmNDgtNGQwOC04NDE5LThhZDE2NjA2ZDNjNiIsImlhdCI6MTYxMTk2MzkwMSwiZXhwIjoxNjExOTY1NzAxfQ.TSyeBHDqwSYSCxl4hFhOtlPmr0ZPEIscm0P6BjE9RNg
+
+### Seguir usuário
+POST http://localhost:3003/user/follow
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAtNDQ0OC1hNDM0LWI1MDg2ZmZmODE1MiIsImlhdCI6MTYxMTk3NDAxMCwiZXhwIjoxNjExOTc1ODEwfQ.PGvBh4SffD3suQYSScZWP7v5ib6fRnDlNtSHGAfc-TM
+Content-Type: application/json
+
+{
+	"userToFollowId": "be54c071-8f48-4d08-8419-8ad16606d3c6"
+}
+
+### Deixar de seguir usuário
+POST http://localhost:3003/user/unfollow
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAtNDQ0OC1hNDM0LWI1MDg2ZmZmODE1MiIsImlhdCI6MTYxMTk3MzAzMiwiZXhwIjoxNjExOTc0ODMyfQ.RqA-DCO5rlBPt-l3KqClL4mDapRJ4bP3GPaUI-rnYrY
+Content-Type: application/json
+
+{
+	"userToUnfollowId": "be54c071-8f48-4d08-8419-8ad16606d3c6"
+}

@@ -6,7 +6,7 @@ import { compareHash } from "../services/hashManager"
 export const login = async (req: Request, res: Response) => {
     try {
         if (!req.body.email || !req.body.password) {
-            throw new Error("Preencha o email e senha.")
+            throw new Error("Please fill in the fields 'email' and 'password'.")
         }
 
         const inputData = {
@@ -17,13 +17,13 @@ export const login = async (req: Request, res: Response) => {
         const user = await selectUserByEmail(inputData.email)
 
         if (!user) {
-            throw new Error("Email não cadastrado")
+            throw new Error("Email not registered.")
         }
 
         const isPasswordCorrect: boolean = await compareHash(inputData.password, user.password)
 
         if (!isPasswordCorrect) {
-            throw new Error("Senha errada.")
+            throw new Error("Wrong password.")
         }
 
         const token = generateToken({ id: user.id })

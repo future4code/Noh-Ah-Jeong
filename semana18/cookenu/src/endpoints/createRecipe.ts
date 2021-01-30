@@ -9,14 +9,12 @@ export const createRecipe = async (req: Request, res: Response) => {
     try {
         const token = req.headers.authorization as string
 
-        getTokenData(token)
-
         const authenticationData = getTokenData(token)
 
         const userId: string = authenticationData.id
 
         if (!req.body.title || !req.body.description) {
-            throw new Error("Preencha os campos 'title' e 'description'.")
+            throw new Error("Please fill in the fields 'title' and 'description'.")
         }
 
         const recipeId: string = generateId()
@@ -33,7 +31,7 @@ export const createRecipe = async (req: Request, res: Response) => {
         
         await insertRecipe(recipeData.id, recipeData.title, recipeData.description, recipeData.created_date, recipeData.user_id)
 
-        res.status(200).send("Receita criada.")
+        res.status(200).send("Recipe created.")
     } catch (error) {
         res.status(400).send({ message: error.message || error.sqlMessage })
     }

@@ -14,7 +14,7 @@ export const getProfileById = async (req: Request, res: Response) => {
         const selectedUser: user = await selectUserById(idInPath)
 
         if (!selectedUser) {
-            throw new Error("Usuário não encontrado.");
+            throw new Error("User not found.");
         }
 
         res.status(200).send({ id: selectedUser.id, name: selectedUser.name, email: selectedUser.email })
