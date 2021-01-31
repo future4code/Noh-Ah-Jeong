@@ -1,10 +1,9 @@
 import { connection } from "../index"
+import { TABLE_NAME } from "../types/dataBaseTables"
 
 export const deleteFollowingUser = async (userId: string, followingUserId: string) => {
-    const tableName = "cookenu_follow"
-
     await connection.raw(`
-        DELETE FROM ${tableName}
+        DELETE FROM ${TABLE_NAME.FOLLOW}
         WHERE user_id = "${userId}" AND following_user_id = "${followingUserId}";
     `)
 }

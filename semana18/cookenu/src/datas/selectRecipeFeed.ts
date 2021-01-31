@@ -1,13 +1,11 @@
 import { connection } from "../index"
+import { TABLE_NAME } from "../types/dataBaseTables"
 
 export const selectRecipeFeed = async () => {
-    const firstTableName = "cookenu_recipes"
-    const secondTableName = "cookenu_users"
-
     const result = await connection.raw(`
-        SELECT ${firstTableName}.id, title, description, created_date AS createdAt, user_id AS userId, name AS userName FROM ${firstTableName}
-        INNER JOIN ${secondTableName}
-        ON ${firstTableName}.user_id = ${secondTableName}.id
+        SELECT ${TABLE_NAME.RECIPES}.id, title, description, created_date AS createdAt, user_id AS userId, name AS userName FROM ${TABLE_NAME.RECIPES}
+        INNER JOIN ${TABLE_NAME.USERS}
+        ON ${TABLE_NAME.RECIPES}.user_id = ${TABLE_NAME.USERS}.id
         ORDER BY created_date ASC;
     `)
 
