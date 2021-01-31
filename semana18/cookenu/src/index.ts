@@ -11,6 +11,7 @@ import { createRecipe } from './endpoints/createRecipe'
 import { getRecipeById } from './endpoints/getRecipeById'
 import { createFollowingUser } from './endpoints/createFollowingUser'
 import { unfollowUser } from './endpoints/unfollowUser'
+import { getRecipeFeed } from './endpoints/getRecipeFeed'
 
 const app = express()
 
@@ -35,6 +36,7 @@ app.post("/login", login)
 app.post("/user/follow", createFollowingUser)
 app.post("/user/unfollow", unfollowUser)
 app.get("/user/profile", getOwnProfile)
+app.get("/user/feed", getRecipeFeed)
 app.get("/user/:id", getProfileById)
 app.post("/recipe", createRecipe)
 app.get("/recipe/:id", getRecipeById)

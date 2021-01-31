@@ -13,7 +13,7 @@ POST http://localhost:3003/login
 Content-Type: application/json
 
 {
-	"email": "joao@email.com",
+	"email": "nohah@email.com",
 	"password": "123456"
 }
 
@@ -27,12 +27,12 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNTRjMDcxLThmNDgt
 
 ### Criar receita
 POST http://localhost:3003/recipe
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODNmNzIxLTZjNDAtNDQ0OC1hNDM0LWI1MDg2ZmZmODE1MiIsImlhdCI6MTYxMTk0MDIwNSwiZXhwIjoxNjExOTQyMDA1fQ.Fm1b_EeBEfqNwenmXwEy8Z3P0imuR_1UqaT2-1cM6xc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNiNDcwYTE2LTVkZDYtNGJhZS05NmJmLWE4ZTllMjUyYzU4OSIsImlhdCI6MTYxMjA5MzMxNiwiZXhwIjoxNjEyMDk1MTE2fQ.o_7E0o3OtSQz2CEP3yaPNx16jNynZGIbUfst_HeCoYc
 Content-Type: application/json
 
 {
-	"title": "Pão de queijo",
-	"description": "pão + queijo"
+	"title": "Doce de leite",
+	"description": "doce + leite"
 }
 
 ### Pegar receita
@@ -56,3 +56,7 @@ Content-Type: application/json
 {
 	"userToUnfollowId": "be54c071-8f48-4d08-8419-8ad16606d3c6"
 }
+
+### Pegar feed de receitas
+GET  http://localhost:3003/user/feed
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNTRjMDcxLThmNDgtNGQwOC04NDE5LThhZDE2NjA2ZDNjNiIsImlhdCI6MTYxMjA5NDM5NywiZXhwIjoxNjEyMDk2MTk3fQ.6H-7vtsxg-DAcgkw74G3urFk2li5kJfStaywY1S24-Q

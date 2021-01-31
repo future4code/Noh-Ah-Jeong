@@ -3,7 +3,7 @@ import { insertUser } from "../datas/insertUser"
 import { generateToken } from "../services/authenticator"
 import { generateHash } from "../services/hashManager"
 import { generateId } from "../services/idGenerator"
-import { user } from "../types/user"
+import { ROLES, user } from "../types/user"
 
 export const createUser = async (req: Request, res: Response) => {
     try {
@@ -25,7 +25,8 @@ export const createUser = async (req: Request, res: Response) => {
             id: userId,
             email: req.body.email,
             name: req.body.name,
-            password: req.body.password
+            password: req.body.password,
+            role: ROLES.NORMAL
         }
 
         const hashPassword: string = await generateHash(userData.password)
