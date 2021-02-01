@@ -1,0 +1,24 @@
+### Cadastro de usuários
+PUT http://localhost:3003/signup
+Content-Type: application/json
+
+{
+    "name": "Kelly Kapoor",
+	"email": "kelly@dundermifflin.com",
+	"password": "123456",
+	"role": "NORMAL"
+}
+### Login
+PUT http://localhost:3003/login
+Content-Type: application/json
+
+{
+	"email": "michael@dundermifflin.com",
+	"password": "theboss"
+}
+### Buscar todos os usuários
+GET  http://localhost:3003/all
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhYWI5Mjc0LWQ4NGMtNDc3ZS1hMzJjLTAxNGY5MmQyMjNjMCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYxMjIwNDk0NSwiZXhwIjoxNjEyMjA4NTQ1fQ.-S_MgmqJN1QGnlcV0Z9KgCQRUH3Jc2mQylYgGEGMOmo
+### Apagar um usuário
+DELETE http://localhost:3003/c516076a-7265-4e5f-a156-cc33355cd8e9
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhYWI5Mjc0LWQ4NGMtNDc3ZS1hMzJjLTAxNGY5MmQyMjNjMCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYxMjIwNjQwNywiZXhwIjoxNjEyMjEwMDA3fQ.IbYuaR-bfQwM9D83_AD7ptyO40COXZod_htcWVWF8Ns
