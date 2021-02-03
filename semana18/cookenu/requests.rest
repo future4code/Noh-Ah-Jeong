@@ -1,0 +1,62 @@
+### Criar usuário
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+	"name": "Chijo",
+	"email": "chijo@email.com",
+	"password": "123456"
+}
+
+### Login
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+	"email": "chijo@email.com",
+	"password": "123456"
+}
+
+### Pegar próprio perfil
+GET http://localhost:3003/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzMDBiYTYzLTc5OTMtNDRmYy1iNjNmLTUxNmMyMTZiM2YzZCIsImlhdCI6MTYxMjA5NjQyMiwiZXhwIjoxNjEyMDk4MjIyfQ.yCq-qIw8yqXqHT1XT7ArdZG8tAPTD6442ATS2Dj9AhI
+
+### Pegar perfil de outro usuário
+GET http://localhost:3003/user/be54c071-8f48-4d08-8419-8ad16606d3c6
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzMDBiYTYzLTc5OTMtNDRmYy1iNjNmLTUxNmMyMTZiM2YzZCIsImlhdCI6MTYxMjA5NjQyMiwiZXhwIjoxNjEyMDk4MjIyfQ.yCq-qIw8yqXqHT1XT7ArdZG8tAPTD6442ATS2Dj9AhI
+
+### Criar receita
+POST http://localhost:3003/recipe
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzMDBiYTYzLTc5OTMtNDRmYy1iNjNmLTUxNmMyMTZiM2YzZCIsImlhdCI6MTYxMjA5NjQyMiwiZXhwIjoxNjEyMDk4MjIyfQ.yCq-qIw8yqXqHT1XT7ArdZG8tAPTD6442ATS2Dj9AhI
+Content-Type: application/json
+
+{
+	"title": "Chá de canela",
+	"description": "doce + leite"
+}
+
+### Pegar receita
+GET http://localhost:3003/recipe/6fd46733-35a4-4418-9ea2-29bee8915246
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzMDBiYTYzLTc5OTMtNDRmYy1iNjNmLTUxNmMyMTZiM2YzZCIsImlhdCI6MTYxMjA5NjQyMiwiZXhwIjoxNjEyMDk4MjIyfQ.yCq-qIw8yqXqHT1XT7ArdZG8tAPTD6442ATS2Dj9AhI
+
+### Seguir usuário
+POST http://localhost:3003/user/follow
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzMDBiYTYzLTc5OTMtNDRmYy1iNjNmLTUxNmMyMTZiM2YzZCIsImlhdCI6MTYxMjA5NjQyMiwiZXhwIjoxNjEyMDk4MjIyfQ.yCq-qIw8yqXqHT1XT7ArdZG8tAPTD6442ATS2Dj9AhI
+Content-Type: application/json
+
+{
+	"userToFollowId": "be54c071-8f48-4d08-8419-8ad16606d3c6"
+}
+
+### Deixar de seguir usuário
+POST http://localhost:3003/user/unfollow
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzMDBiYTYzLTc5OTMtNDRmYy1iNjNmLTUxNmMyMTZiM2YzZCIsImlhdCI6MTYxMjA5NjQyMiwiZXhwIjoxNjEyMDk4MjIyfQ.yCq-qIw8yqXqHT1XT7ArdZG8tAPTD6442ATS2Dj9AhI
+Content-Type: application/json
+
+{
+	"userToUnfollowId": "be54c071-8f48-4d08-8419-8ad16606d3c6"
+}
+
+### Pegar feed de receitas
+GET  http://localhost:3003/user/feed
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzMDBiYTYzLTc5OTMtNDRmYy1iNjNmLTUxNmMyMTZiM2YzZCIsImlhdCI6MTYxMjA5NjQyMiwiZXhwIjoxNjEyMDk4MjIyfQ.yCq-qIw8yqXqHT1XT7ArdZG8tAPTD6442ATS2Dj9AhI
