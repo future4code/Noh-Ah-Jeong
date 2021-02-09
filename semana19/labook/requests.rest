@@ -1,0 +1,32 @@
+### Cadastro
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name":"Alice",
+    "email":"alice@gmail.com",
+    "password":"pass123"
+}
+
+### Login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email":"alice@gmail.com",
+    "password":"pass123"
+}
+
+### Criar Post
+POST http://localhost:3003/posts/create
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGEwYzJmLTc4ZjMtNDJmYS1hMzAyLWY1NDg0MzMzMGU3OSIsImlhdCI6MTYxMjM4MDE4MywiZXhwIjoxNjEyMzgzNzgzfQ.Lt-k9rqgXuUgWamnKq03md3DikkRCF5ZdCHKS7ioIzw
+Content-Type: application/json
+
+{
+    "photo":"https://i.picsum.photos/id/238/200/200.jpg?hmac=O4Jc6lqHVfaKVzLf8bWssNTbWzQoaRUC0TDXod9xDdM",
+    "description":"My city is beautiful =D",
+    "type":"normal"
+}
+
+### Buscar Post por ID
+GET http://localhost:3003/posts/09b47f14-c6a3-458b-ac8b-e403e315907a
