@@ -1,0 +1,2 @@
+### Exercício 1
+GET http://localhost:3003/users/profile/5
